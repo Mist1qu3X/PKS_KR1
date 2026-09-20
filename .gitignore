@@ -1,0 +1,18 @@
+# Скомпилированные файлы и сборка Maven
+target/
+*.class
+
+# Локальный лаунчер (внутри лежат библиотеки и классы, это не исходники)
+run-local/
+
+# Экспортированные данные
+bookings.xlsx
+bookings.csv
+
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# Прочее
+Thumbs.db
+.DS_Store
