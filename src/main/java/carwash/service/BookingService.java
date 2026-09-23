@@ -1,12 +1,12 @@
-package ru.mirea.carwash.service;
+package carwash.service;
 
-import ru.mirea.carwash.exception.BusinessException;
-import ru.mirea.carwash.exception.EntityNotFoundException;
-import ru.mirea.carwash.model.Booking;
-import ru.mirea.carwash.model.BookingStatus;
-import ru.mirea.carwash.model.ServiceType;
-import ru.mirea.carwash.repository.BookingRepository;
-import ru.mirea.carwash.repository.ClientRepository;
+import carwash.exception.BusinessException;
+import carwash.exception.EntityNotFoundException;
+import carwash.model.Booking;
+import carwash.model.BookingStatus;
+import carwash.model.ServiceType;
+import carwash.repository.BookingRepository;
+import carwash.repository.ClientRepository;
 
 import java.time.LocalDateTime;
 import java.util.Comparator;

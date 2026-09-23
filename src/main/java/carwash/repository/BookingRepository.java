@@ -1,10 +1,10 @@
-package ru.mirea.carwash.repository;
+package carwash.repository;
 
-import ru.mirea.carwash.exception.DatabaseException;
-import ru.mirea.carwash.model.Booking;
-import ru.mirea.carwash.model.BookingStatus;
-import ru.mirea.carwash.model.ServiceType;
-import ru.mirea.carwash.util.DatabaseManager;
+import carwash.exception.DatabaseException;
+import carwash.model.Booking;
+import carwash.model.BookingStatus;
+import carwash.model.ServiceType;
+import carwash.util.DatabaseManager;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

@@ -1,4 +1,4 @@
-package ru.mirea.carwash.exception;
+package carwash.exception;
 
 // ошибка при работе с базой (оборачиваем SQLException)
 public class DatabaseException extends RuntimeException {

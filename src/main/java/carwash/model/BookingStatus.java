@@ -1,4 +1,4 @@
-package ru.mirea.carwash.model;
+package carwash.model;
 
 // статусы записи и правила переходов между ними
 public enum BookingStatus {

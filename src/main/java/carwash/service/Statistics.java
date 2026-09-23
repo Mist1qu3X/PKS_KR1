@@ -1,4 +1,4 @@
-package ru.mirea.carwash.service;
+package carwash.service;
 
 // набор показателей для вывода в пункте меню "Статистика"
 public class Statistics {

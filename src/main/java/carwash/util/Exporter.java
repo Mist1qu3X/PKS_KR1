@@ -1,6 +1,6 @@
-package ru.mirea.carwash.util;
+package carwash.util;
 
-import ru.mirea.carwash.model.Booking;
+import carwash.model.Booking;
 
 import java.util.List;
 

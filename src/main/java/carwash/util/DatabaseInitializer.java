@@ -1,6 +1,6 @@
-package ru.mirea.carwash.util;
+package carwash.util;
 
-import ru.mirea.carwash.exception.DatabaseException;
+import carwash.exception.DatabaseException;
 
 import java.io.BufferedReader;
 import java.io.IOException;

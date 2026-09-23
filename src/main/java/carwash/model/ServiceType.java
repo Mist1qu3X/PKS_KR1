@@ -1,4 +1,4 @@
-package ru.mirea.carwash.model;
+package carwash.model;
 
 // типы услуг автомойки: у каждого есть название и базовая цена
 public enum ServiceType {

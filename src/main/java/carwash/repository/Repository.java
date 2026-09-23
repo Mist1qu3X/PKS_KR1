@@ -1,4 +1,4 @@
-package ru.mirea.carwash.repository;
+package carwash.repository;
 
 import java.util.List;
 import java.util.Optional;

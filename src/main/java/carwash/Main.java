@@ -1,9 +1,10 @@
-package ru.mirea.carwash;
+package carwash;
 
-import ru.mirea.carwash.ui.ConsoleApp;
+import carwash.ui.ConsoleApp;
 
 import java.io.PrintStream;
 import java.io.UnsupportedEncodingException;
+import java.util.NoSuchElementException;
 
 public class Main {
 
@@ -14,6 +15,10 @@ public class Main {
         } catch (UnsupportedEncodingException e) {
             // UTF-8 поддерживается всегда
         }
-        new ConsoleApp().run();
+        try {
+            new ConsoleApp().run();
+        } catch (NoSuchElementException e) {
+            // ввод закончился (например, поток закрыли) — выходим без ошибки
+        }
     }
 }

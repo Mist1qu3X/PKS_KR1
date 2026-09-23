@@ -5,17 +5,16 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>ru.mirea</groupId>
+    <groupId>carwash</groupId>
     <artifactId>carwash</artifactId>
     <version>1.0</version>
     <packaging>jar</packaging>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <!-- Версия Java. Рекомендуется 17. Код также совместим с Java 8:
-             при необходимости замените значение на 8. -->
+        <!-- версия Java для компиляции -->
         <maven.compiler.release>17</maven.compiler.release>
-        <exec.mainClass>ru.mirea.carwash.Main</exec.mainClass>
+        <exec.mainClass>carwash.Main</exec.mainClass>
     </properties>
 
     <dependencies>

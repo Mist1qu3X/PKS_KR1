@@ -1,4 +1,4 @@
-package ru.mirea.carwash.model;
+package carwash.model;
 
 import java.time.LocalDateTime;
 

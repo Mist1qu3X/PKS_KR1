@@ -1,9 +1,9 @@
-package ru.mirea.carwash.service;
+package carwash.service;
 
-import ru.mirea.carwash.exception.BusinessException;
-import ru.mirea.carwash.exception.EntityNotFoundException;
-import ru.mirea.carwash.model.Client;
-import ru.mirea.carwash.repository.ClientRepository;
+import carwash.exception.BusinessException;
+import carwash.exception.EntityNotFoundException;
+import carwash.model.Client;
+import carwash.repository.ClientRepository;
 
 import java.util.List;
 

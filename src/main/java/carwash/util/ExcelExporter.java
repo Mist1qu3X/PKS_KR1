@@ -1,4 +1,4 @@
-package ru.mirea.carwash.util;
+package carwash.util;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
@@ -7,8 +7,8 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import ru.mirea.carwash.exception.DatabaseException;
-import ru.mirea.carwash.model.Booking;
+import carwash.exception.DatabaseException;
+import carwash.model.Booking;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
