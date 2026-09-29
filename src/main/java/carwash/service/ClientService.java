@@ -77,18 +77,13 @@ public class ClientService {
         }
     }
 
-    private void validatePhone(String phone) {
+    public void validatePhone(String phone) {
         if (phone == null || phone.trim().isEmpty()) {
             throw new BusinessException("Телефон клиента обязателен.");
         }
         String trimmed = phone.trim();
-        if (!trimmed.matches("[0-9 +()\\-]+")) {
-            throw new BusinessException(
-                    "Телефон может содержать только цифры и символы + - ( ). Пример: +7-900-123-45-67.");
-        }
-        long digits = trimmed.chars().filter(Character::isDigit).count();
-        if (digits < 6 || digits > 15) {
-            throw new BusinessException("Телефон должен содержать от 6 до 15 цифр.");
+        if (!trimmed.matches("\\+7-[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}")) {
+            throw new BusinessException("Телефон должен быть в формате +7-900-123-45-67.");
         }
     }
 

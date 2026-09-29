@@ -122,7 +122,16 @@ public class ConsoleApp {
 
     private void addClient() {
         String name = reader.readNonEmpty("Имя клиента: ");
-        String phone = reader.readNonEmpty("Телефон (например +7-900-123-45-67): ");
+        String phone;
+        while (true) {
+            phone = reader.readNonEmpty("Телефон (например +7-900-123-45-67): ");
+            try {
+                clientService.validatePhone(phone);
+                break;
+            } catch (BusinessException e) {
+                System.out.println("Ошибка: " + e.getMessage());
+            }
+        }
         String email = reader.readLine("Email (можно оставить пустым): ");
         Client client = clientService.create(name, phone, email);
         System.out.println("Клиент добавлен: " + client);
@@ -211,7 +220,16 @@ public class ConsoleApp {
             System.out.println("Создание записи отменено.");
             return;
         }
-        String carNumber = reader.readNonEmpty("Гос. номер автомобиля (например А123ВС77): ");
+        String carNumber;
+        while (true) {
+            carNumber = reader.readNonEmpty("Гос. номер автомобиля (например А123ВС77): ");
+            try {
+                bookingService.validateCarNumber(carNumber);
+                break;
+            } catch (BusinessException e) {
+                System.out.println("Ошибка: " + e.getMessage());
+            }
+        }
         String carModel = reader.readLine("Модель автомобиля (можно оставить пустым): ");
         ServiceType serviceType = chooseServiceType();
         System.out.println("Когда записать на мойку?");
@@ -315,15 +333,21 @@ public class ConsoleApp {
     private void sortBookings() {
         System.out.println("Сортировать:");
         System.out.println("1. По дате (по возрастанию)");
-        System.out.println("2. По цене (по убыванию)");
-        System.out.println("3. По статусу");
+        System.out.println("2. По дате (по убыванию)");
+        System.out.println("3. По цене (по возрастанию)");
+        System.out.println("4. По цене (по убыванию)");
+        System.out.println("5. По статусу");
         int choice = reader.readInt("Выберите вариант: ");
         List<Booking> all = bookingService.getAll();
         if (choice == 1) {
             printBookings(bookingService.sortByDate(all));
         } else if (choice == 2) {
-            printBookings(bookingService.sortByPriceDesc(all));
+            printBookings(bookingService.sortByDateDesc(all));
         } else if (choice == 3) {
+            printBookings(bookingService.sortByPriceAsc(all));
+        } else if (choice == 4) {
+            printBookings(bookingService.sortByPriceDesc(all));
+        } else if (choice == 5) {
             printBookings(bookingService.sortByStatus(all));
         } else {
             System.out.println("Неверный выбор.");
