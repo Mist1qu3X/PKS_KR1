@@ -9,6 +9,9 @@ public class Statistics {
     private int completedBookings;
     private int cancelledBookings;
     private double totalRevenue;
+    private double averageCheck;
+    private double minPrice;
+    private double maxPrice;
 
     public int getTotalClients() {
         return totalClients;
@@ -56,5 +59,29 @@ public class Statistics {
 
     public void setTotalRevenue(double totalRevenue) {
         this.totalRevenue = totalRevenue;
+    }
+
+    public double getAverageCheck() {
+        return averageCheck;
+    }
+
+    public void setAverageCheck(double averageCheck) {
+        this.averageCheck = averageCheck;
+    }
+
+    public double getMinPrice() {
+        return minPrice;
+    }
+
+    public void setMinPrice(double minPrice) {
+        this.minPrice = minPrice;
+    }
+
+    public double getMaxPrice() {
+        return maxPrice;
+    }
+
+    public void setMaxPrice(double maxPrice) {
+        this.maxPrice = maxPrice;
     }
 }

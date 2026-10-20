@@ -1,0 +1,127 @@
+/* ====== Общее оформление приложения "Автомойка" (КР2) ====== */
+
+.root {
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-font-size: 13px;
+    -fx-background-color: #f4f6f8;
+}
+
+/* ---- панель инструментов ---- */
+.toolbar-box {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #dfe3e8;
+    -fx-border-width: 0 0 1 0;
+}
+
+.toolbar-row {
+    -fx-padding: 10 12 10 12;
+    -fx-alignment: CENTER_LEFT;
+}
+
+.field-label {
+    -fx-text-fill: #55606b;
+}
+
+/* ---- кнопки ---- */
+.button {
+    -fx-background-color: #e9edf1;
+    -fx-text-fill: #263238;
+    -fx-background-radius: 6;
+    -fx-padding: 6 14 6 14;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #dce3e9;
+}
+
+.btn-primary {
+    -fx-background-color: #1976d2;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.btn-primary:hover {
+    -fx-background-color: #1565c0;
+}
+
+.btn-danger {
+    -fx-background-color: #e53935;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.btn-danger:hover {
+    -fx-background-color: #c62828;
+}
+
+/* ---- таблица ---- */
+.table-view {
+    -fx-background-color: white;
+    -fx-border-color: #dfe3e8;
+}
+
+.table-view .column-header {
+    -fx-background-color: #eceff1;
+}
+
+.table-view .column-header .label {
+    -fx-font-weight: bold;
+    -fx-text-fill: #37474f;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #bbdefb;
+    -fx-text-fill: #0d1b2a;
+}
+
+/* ---- поля ввода ---- */
+.text-field, .combo-box, .date-picker {
+    -fx-background-radius: 6;
+    -fx-border-radius: 6;
+    -fx-border-color: #cfd8dc;
+    -fx-background-color: white;
+}
+
+.text-field:focused, .combo-box:focused, .date-picker:focused {
+    -fx-border-color: #1976d2;
+}
+
+/* ---- строка состояния ---- */
+.status-bar {
+    -fx-padding: 6 12 6 12;
+    -fx-background-color: #eceff1;
+    -fx-text-fill: #455a64;
+    -fx-border-color: #dfe3e8;
+    -fx-border-width: 1 0 0 0;
+}
+
+/* ---- диалоговые окна ---- */
+.dialog-box {
+    -fx-padding: 18;
+    -fx-background-color: #ffffff;
+}
+
+.dialog-title {
+    -fx-font-size: 17px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1976d2;
+}
+
+.dialog-buttons {
+    -fx-alignment: CENTER_RIGHT;
+}
+
+/* ---- сообщение об ошибке в форме ---- */
+.error-label {
+    -fx-text-fill: #c62828;
+    -fx-background-color: #ffebee;
+    -fx-padding: 8 10 8 10;
+    -fx-background-radius: 6;
+}
+
+/* ---- статистика ---- */
+.stat-value {
+    -fx-font-weight: bold;
+    -fx-text-fill: #263238;
+}

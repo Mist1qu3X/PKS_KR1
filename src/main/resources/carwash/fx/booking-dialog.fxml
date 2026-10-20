@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="carwash.fx.BookingDialogController"
+      spacing="12" styleClass="dialog-box" prefWidth="420">
+
+    <Label fx:id="titleLabel" text="Новая запись" styleClass="dialog-title"/>
+
+    <GridPane hgap="10" vgap="10">
+        <columnConstraints>
+            <ColumnConstraints minWidth="120"/>
+            <ColumnConstraints hgrow="ALWAYS"/>
+        </columnConstraints>
+
+        <Label text="Клиент:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="clientBox" GridPane.rowIndex="0" GridPane.columnIndex="1" maxWidth="Infinity"/>
+
+        <Label text="Гос. номер:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <TextField fx:id="carNumberField" promptText="например: А123ВС77"
+                   GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="Модель авто:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <TextField fx:id="carModelField" promptText="например: Toyota Camry"
+                   GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+        <Label text="Услуга:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="serviceBox" GridPane.rowIndex="3" GridPane.columnIndex="1" maxWidth="Infinity"/>
+
+        <Label text="Дата:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+        <DatePicker fx:id="datePicker" GridPane.rowIndex="4" GridPane.columnIndex="1" maxWidth="Infinity"/>
+
+        <Label text="Время (ЧЧ:ММ):" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+        <TextField fx:id="timeField" promptText="10:00"
+                   GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
+        <Label text="Цена, руб.:" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+        <TextField fx:id="priceField" promptText="например: 1200"
+                   GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+    </GridPane>
+
+    <Label fx:id="errorLabel" styleClass="error-label" wrapText="true" visible="false" managed="false"/>
+
+    <HBox spacing="10" styleClass="dialog-buttons">
+        <Button text="Сохранить" onAction="#onSave" styleClass="btn-primary"/>
+        <Button text="Отмена" onAction="#onCancel"/>
+    </HBox>
+</VBox>

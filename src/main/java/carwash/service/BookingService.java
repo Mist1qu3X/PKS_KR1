@@ -160,6 +160,11 @@ public class BookingService {
                 .mapToDouble(Booking::getPrice)
                 .sum();
 
+        // средняя, минимальная и максимальная цена по всем записям
+        double average = all.stream().mapToDouble(Booking::getPrice).average().orElse(0);
+        double min = all.stream().mapToDouble(Booking::getPrice).min().orElse(0);
+        double max = all.stream().mapToDouble(Booking::getPrice).max().orElse(0);
+
         Statistics stats = new Statistics();
         stats.setTotalClients(clientRepository.findAll().size());
         stats.setTotalBookings(all.size());
@@ -167,6 +172,9 @@ public class BookingService {
         stats.setCompletedBookings((int) completed);
         stats.setCancelledBookings((int) cancelled);
         stats.setTotalRevenue(revenue);
+        stats.setAverageCheck(average);
+        stats.setMinPrice(min);
+        stats.setMaxPrice(max);
         return stats;
     }
 

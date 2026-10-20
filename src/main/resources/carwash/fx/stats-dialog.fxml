@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="carwash.fx.StatsController"
+      spacing="12" styleClass="dialog-box" prefWidth="380">
+
+    <Label text="Статистика автомойки" styleClass="dialog-title"/>
+
+    <GridPane hgap="14" vgap="8" styleClass="stats-grid">
+        <columnConstraints>
+            <ColumnConstraints minWidth="230"/>
+            <ColumnConstraints hgrow="ALWAYS"/>
+        </columnConstraints>
+
+        <Label text="Всего клиентов:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <Label fx:id="clientsLabel" styleClass="stat-value" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="Всего записей:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <Label fx:id="totalLabel" styleClass="stat-value" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="Активных записей:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <Label fx:id="activeLabel" styleClass="stat-value" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+        <Label text="Завершённых:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <Label fx:id="completedLabel" styleClass="stat-value" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+        <Label text="Отменённых:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+        <Label fx:id="cancelledLabel" styleClass="stat-value" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+        <Label text="Выручка (завершённые), руб.:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+        <Label fx:id="revenueLabel" styleClass="stat-value" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
+        <Label text="Средний чек, руб.:" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+        <Label fx:id="averageLabel" styleClass="stat-value" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+
+        <Label text="Минимальная цена, руб.:" GridPane.rowIndex="7" GridPane.columnIndex="0"/>
+        <Label fx:id="minLabel" styleClass="stat-value" GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+
+        <Label text="Максимальная цена, руб.:" GridPane.rowIndex="8" GridPane.columnIndex="0"/>
+        <Label fx:id="maxLabel" styleClass="stat-value" GridPane.rowIndex="8" GridPane.columnIndex="1"/>
+    </GridPane>
+
+    <HBox spacing="10" styleClass="dialog-buttons">
+        <Button text="Закрыть" onAction="#onClose"/>
+    </HBox>
+</VBox>

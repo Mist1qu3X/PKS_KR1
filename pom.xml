@@ -7,17 +7,32 @@
 
     <groupId>carwash</groupId>
     <artifactId>carwash</artifactId>
-    <version>1.0</version>
+    <version>2.0</version>
     <packaging>jar</packaging>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!-- версия Java для компиляции -->
-        <maven.compiler.release>17</maven.compiler.release>
-        <exec.mainClass>carwash.Main</exec.mainClass>
+        <maven.compiler.release>21</maven.compiler.release>
+        <javafx.version>21.0.8</javafx.version>
+        <!-- главный класс JavaFX-приложения (КР2) -->
+        <exec.mainClass>carwash.fx.CarWashApp</exec.mainClass>
     </properties>
 
     <dependencies>
+        <!-- JavaFX: элементы управления (кнопки, таблицы, поля ввода) -->
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>${javafx.version}</version>
+        </dependency>
+        <!-- JavaFX: загрузка интерфейса из FXML -->
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-fxml</artifactId>
+            <version>${javafx.version}</version>
+        </dependency>
+
         <!-- Драйвер PostgreSQL для подключения через JDBC -->
         <dependency>
             <groupId>org.postgresql</groupId>
@@ -43,38 +58,24 @@
                 <version>3.13.0</version>
             </plugin>
 
-            <!-- Быстрый запуск из консоли: mvn compile exec:java -->
+            <!-- Копирование ресурсов (FXML, CSS, database.properties) в кодировке UTF-8 -->
             <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>exec-maven-plugin</artifactId>
-                <version>3.2.0</version>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.3.1</version>
                 <configuration>
-                    <mainClass>${exec.mainClass}</mainClass>
+                    <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
 
-            <!-- Сборка исполняемого jar со всеми зависимостями:
-                 mvn package  ->  target/carwash.jar -->
+            <!-- Запуск JavaFX-приложения: mvn javafx:run -->
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-shade-plugin</artifactId>
-                <version>3.5.3</version>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>shade</goal>
-                        </goals>
-                        <configuration>
-                            <transformers>
-                                <transformer
-                                        implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>${exec.mainClass}</mainClass>
-                                </transformer>
-                            </transformers>
-                        </configuration>
-                    </execution>
-                </executions>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <version>0.0.8</version>
+                <configuration>
+                    <mainClass>${exec.mainClass}</mainClass>
+                </configuration>
             </plugin>
         </plugins>
     </build>
